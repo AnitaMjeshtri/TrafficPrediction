@@ -121,10 +121,45 @@ I have used complete and ward linkage. Complete linkage is max-agglomerative clu
 
 The very low results are justified by the fact that our problem is a classification one, so it’s normal to have low accuracy scores.
 | <img width="2500" alt="image" src="https://github.com/IlviCumani/TrafficPrediction/assets/122668935/63825563-e4ec-4932-a234-3b753da4683a"> | <img width="2500" alt="image" src="https://github.com/IlviCumani/TrafficPrediction/assets/122668935/da20aefa-3717-4292-8a99-67a95ee1ad3e"> |
+
 |---|---|
 
 ### Statistics
 <img width="507" alt="image" src="https://github.com/IlviCumani/TrafficPrediction/assets/122668935/a931b9c4-7a4b-430e-af4b-f52f2bc505a6">
 
+
+## Support vector machines
+Regarding Support Vector Machines I have developed a python script, where initially I familiarized with the data, by also visualizing it. 
+
+### Data preprocessing
+
+* I transformed the time column into a column named hours and a column named minutes. 
+* I also created a midday column that contains whether that hour is in the AM or PM.
+* I have also encoded each of the categorical attributes, namely the day of the week and the traffic situation.
+* I performed the data normalizations as explained in the third section, by first applying the MinMaxScaler and saving it into the features_first_normalization, and then applying StandardScaler and saving it into the features_second_normalization. 
+* For dimensionality reduction I have used PCA, and then visualized the data using PCA for each normalization. 
+
+
+Support vector machines use several kernel functions. In order to obtain the best results, for this project I have used the rbf, linear, polynomial and sigmoid kernel functions. I have applied SVM to the data normalized with MinMaxScaler, StandardScaler, data reduced with PCA and to the not normalized data, and for each kernel in each of the forms of data I have used 60%, 70% and 80% train-test split. This has resulted in 48 different implementations of the SVM, and 48 different performances. 
+
+**Data normalized with MinMaxScaler:**   
+
+<img width="478" alt="image" src="https://github.com/IlviCumani/TrafficPrediction/assets/119689635/53a1490a-ac9e-4075-b2df-3ea0a2e7b262">
+
+**Data normalized with StandardScaler:**  
+
+<img width="476" alt="image" src="https://github.com/IlviCumani/TrafficPrediction/assets/119689635/7667651b-9c77-4f7d-a63e-c87de04010e8">
+
+**Not normalized data:**  
+
+<img width="476" alt="image" src="https://github.com/IlviCumani/TrafficPrediction/assets/119689635/a54fe4c1-4c64-4829-93e3-4549f49dd798">
+
+**Data with dimensionality reduction(with PCA):**  
+
+<img width="476" alt="image" src="https://github.com/IlviCumani/TrafficPrediction/assets/119689635/8ac3fb00-a2d0-4ad5-b0ad-0e44857a2a49">
+
+### Remarks regarding Support Vector Machines: 
+
+As we can see from the tables, the overall performance is quite satisfying. There are not a lot of differences occurring from the normalization choice. The highest accuracy achieved is 0.95, with an RBF kernel and a training size of 80% of the original data. Sigmoid kernel has not been effective with this dataset, producing very low results. Also data that has undergone dimensionality reduction does not achieve very high results, especially it has flaws in the precision, recall and F1 score. This is understandable, because dimensionality reduction is used to trade performance with efficiency when we have a huge number of columns(which would take a lot of time to compute). For our dataset, it was not necessary to perform dimensionality reduction, because the number of features is 10. However, I used it to compare the results. 
 
 
