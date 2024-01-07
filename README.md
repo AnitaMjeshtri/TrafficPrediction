@@ -120,8 +120,7 @@ Data has been normalized in the same way I have already mentioned above.
 I have used complete and ward linkage. Complete linkage is max-agglomerative clustering, where we merge two closest clusters and choose the max of these clusters for the next step. The silhouette score has shown better results with ward linkage rather than complete linkage. Number of clusters is set to be 4 in both cases, since we have 4 classes of Traffic Situation.
 
 The very low results are justified by the fact that our problem is a classification one, so it’s normal to have low accuracy scores.
-| <img width="2500" alt="image" src="https://github.com/IlviCumani/TrafficPrediction/assets/122668935/63825563-e4ec-4932-a234-3b753da4683a"> | <img width="2500" alt="image" src="https://github.com/IlviCumani/TrafficPrediction/assets/122668935/da20aefa-3717-4292-8a99-67a95ee1ad3e"> |
-
+| <img width="500" alt="image" src="https://github.com/IlviCumani/TrafficPrediction/assets/122668935/63825563-e4ec-4932-a234-3b753da4683a"> | <img width="500" alt="image" src="https://github.com/IlviCumani/TrafficPrediction/assets/122668935/da20aefa-3717-4292-8a99-67a95ee1ad3e"> |
 |---|---|
 
 ### Statistics
